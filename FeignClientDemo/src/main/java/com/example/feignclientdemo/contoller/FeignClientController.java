@@ -1,7 +1,8 @@
 package com.example.feignclientdemo.contoller;
 
 
-import com.example.feignclientdemo.util.FeignServiceUtil;
+import com.example.feignclientdemo.service.UserService;
+import com.example.feignclientdemo.util.FeignClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,20 +13,20 @@ import org.springframework.web.bind.annotation.RestController;
 public class FeignClientController {
 
     @Autowired
-    private FeignServiceUtil serviceUtil;
+    private UserService userService;
 
-    @GetMapping("/get-name")
-    public String name() {
-        return serviceUtil.getName();
+    @GetMapping("/name")
+    public String getName() {
+        return userService.getName();
     }
 
-    @GetMapping("/get-status")
-    public String status() {
-        return serviceUtil.status();
+    @GetMapping("/status")
+    public String getStatus() {
+        return userService.getStatus();
     }
 
-    @GetMapping("get-address")
-    public String address() {
-        return serviceUtil.address();
+    @GetMapping("/address")
+    public String getAddress() {
+        return userService.getAddress();
     }
 }

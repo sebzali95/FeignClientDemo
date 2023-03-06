@@ -1,6 +1,4 @@
 package com.example.demoservice.controller;
-
-
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,7 +16,7 @@ public class DemoController {
         return "active!";
     }
     @GetMapping("/address")
-    public String address() {
+    public String getAddress() {
         return "Baku";
     }
 }
